@@ -53,28 +53,23 @@ public class Main extends Application {
 //Emory Wilkinson Window
     private Stage CreateControllerWindow1()
     {
-    	
-    	Stage controllerStage = new Stage();
-        controllerStage.setTitle("HELLO WORLD");
-
-        HelloText = new Label("Hello world!");
-	Label Root = new Label("");
+	Stage controllerStage1 = new Stage();
+        controllerStage1.setTitle("New Stage");
+        Label EW = new Label("");
         //Scene can take in a "pane" which is basically any node type
-        Scene debugWindow = new Scene(HelloText, 600, 500);
-        controllerStage.setScene(debugWindow);
+        Scene debugWindow = new Scene(EW, 600, 500);
+        controllerStage1.setScene(debugWindow);
 	 //Changes the coordinates of the scene
-        controllerStage.setX(60);
-        controllerStage.setY(100);
+        controllerStage1.setX(60);
+        controllerStage1.setY(100);
         //Takes away the title bar of the scene
-        controllerStage.initStyle(StageStyle.UNDECORATED);
+        controllerStage1.initStyle(StageStyle.UNDECORATED);
         //Creates a new scene
-        Scene ColoredWindow = new Scene(Root, 600, 500);
-        //Sets the background color of the new scene to black
-        Root.setStyle("-fx-background-color: black;");
-        //Adds scene to stage
-        controllerStage.setScene(ColoredWindow);
-        controllerStage.show();
-        return controllerStage;
+        Scene ColoredWindow2 = new Scene(EW, 600, 500);
+        EW.setStyle("-fx-background-color: black;");
+        controllerStage1.setScene(ColoredWindow2);
+        controllerStage1.show();
+        return controllerStage1;
     }
 
 
