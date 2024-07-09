@@ -2,6 +2,7 @@ package application;
 	
 import javafx.application.Application;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.application.Application;
@@ -18,6 +19,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Main extends Application {
 
+    private static final Parent Root = null;
     Label HelloText;
 
     //The first method that should be called
@@ -50,7 +52,7 @@ public class Main extends Application {
         return controllerStage;
     }
 //Emory Wilkinson Window
-    private Stage CreateControllerWindow()
+    private Stage CreateControllerWindow1()
     {
     	
     	Stage controllerStage = new Stage();
