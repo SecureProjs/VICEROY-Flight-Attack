@@ -19,7 +19,6 @@ import java.util.concurrent.TimeUnit;
 
 public class Main extends Application {
 
-    private static final Parent Root = null;
     Label HelloText;
 
     //The first method that should be called
