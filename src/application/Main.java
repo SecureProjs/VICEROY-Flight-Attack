@@ -49,6 +49,20 @@ public class Main extends Application {
 
         return controllerStage;
     }
+//Emory Wilkinson Window
+    private Stage CreateControllerWindow()
+    {
+    	
+    	Stage controllerStage = new Stage();
+        controllerStage.setTitle("HELLO WORLD");
+
+        HelloText = new Label("Hello world!");
+        //Scene can take in a "pane" which is basically any node type
+        Scene debugWindow = new Scene(HelloText, 600, 500);
+        controllerStage.setScene(debugWindow);
+
+        return controllerStage;
+    }
 
 
 }
