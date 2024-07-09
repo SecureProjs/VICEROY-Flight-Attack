@@ -1,5 +1,5 @@
-package application;
-	
+package Hello;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -14,9 +14,13 @@ import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.concurrent.TimeUnit;
 
-public class Main extends Application {
+public class World extends Application {
 
     Label HelloText;
 
@@ -49,6 +53,33 @@ public class Main extends Application {
 
         return controllerStage;
     }
-
-
+    
+    //Simulate keypress (I hope)
+    {  	
+   
+    	  Robot robot = null;
+		try {
+			robot = new Robot();
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		robot.keyPress(KeyEvent.VK_A);
+          robot.keyRelease(KeyEvent.VK_A);   
+}
+    //Simulate multiple keypresses at once (i hope)
+    {
+    	Robot robot = null;
+		try {
+			robot = new Robot();
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		robot.keyPress(KeyEvent.VK_WINDOWS);
+    	robot.keyPress(KeyEvent.VK_S);  // earlier key still pressed
+    	robot.keyRelease(KeyEvent.VK_S);
+    	robot.keyRelease(KeyEvent.VK_WINDOWS);
+    	
+    }
 }
