@@ -59,6 +59,7 @@ public class Main extends Application {
         controllerStage.setTitle("HELLO WORLD");
 
         HelloText = new Label("Hello world!");
+	Label Root = new Label("");
         //Scene can take in a "pane" which is basically any node type
         Scene debugWindow = new Scene(HelloText, 600, 500);
         controllerStage.setScene(debugWindow);
