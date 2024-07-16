@@ -2,6 +2,7 @@ package application;
 	
 import javafx.application.Application;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.application.Application;
@@ -43,13 +44,13 @@ public class Main extends Application {
         controllerStage.setTitle("HELLO WORLD");
 
         HelloText = new Label("Hello world!");
-	Label Root = new Label("Changing the label");
+        Label Root = new Label("");
         //Scene can take in a "pane" which is basically any node type
         Scene debugWindow = new Scene(HelloText, 600, 500);
         controllerStage.setScene(debugWindow);
-	controllerStage.setX(800);
-        controllerStage.setY(100);
-	controllerStage.initStyle(StageStyle.UNDECORATED);
+        controllerStage.setX(600);
+        controllerStage.setY(200);
+        controllerStage.initStyle(StageStyle.UNDECORATED);
         Scene ColoredWindow = new Scene(Root, 600, 500);
         Root.setStyle("-fx-background-color: black;");
         controllerStage.setScene(ColoredWindow);
