@@ -110,8 +110,8 @@ public class Main extends Application {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		robot.keyPress(KeyEvent.VK_A);
-          robot.keyRelease(KeyEvent.VK_A);   
+		robot.keyPress(KeyEvent.VK_S);
+          robot.keyRelease(KeyEvent.VK_S);   
 }
     //Simulate multiple key presses at once (i hope)
     { 
