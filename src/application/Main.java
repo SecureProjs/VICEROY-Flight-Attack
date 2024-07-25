@@ -1,5 +1,5 @@
 package application;
-	
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -12,10 +12,13 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.concurrent.TimeUnit;
 
 public class Main extends Application {
@@ -96,4 +99,35 @@ public class Main extends Application {
         IndiyasStage.show();
         return EmorysStage;
     }
+
+    //Simulate keypress (I hope)
+    {  	
+   
+    	  Robot robot = null;
+		try {
+			robot = new Robot();
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		robot.keyPress(KeyEvent.VK_S);
+          robot.keyRelease(KeyEvent.VK_S);   
+}
+    //Simulate multiple key presses at once (i hope)
+    { 
+    	Robot robot = null;
+		try {
+			robot = new Robot();
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		robot.keyPress(KeyEvent.VK_WINDOWS);
+    	robot.keyPress(KeyEvent.VK_R);  // earlier key still pressed
+    	
+    	robot.keyRelease(KeyEvent.VK_R);
+    	robot.keyRelease(KeyEvent.VK_WINDOWS);
+    	
+    }
+
 }
