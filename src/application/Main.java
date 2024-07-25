@@ -1,5 +1,5 @@
-package Hello;
-
+package Main;
+	hello eterneti
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -20,7 +20,7 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.util.concurrent.TimeUnit;
 
-public class World extends Application {
+public class Main extends Application {
 
     Label HelloText;
 
@@ -53,7 +53,7 @@ public class World extends Application {
 
         return controllerStage;
     }
-    
+
     //Simulate keypress (I hope)
     {  	
    
@@ -67,8 +67,8 @@ public class World extends Application {
 		robot.keyPress(KeyEvent.VK_A);
           robot.keyRelease(KeyEvent.VK_A);   
 }
-    //Simulate multiple keypresses at once (i hope)
-    {
+    //Simulate multiple key presses at once (i hope)
+    { 
     	Robot robot = null;
 		try {
 			robot = new Robot();
@@ -77,9 +77,11 @@ public class World extends Application {
 			e.printStackTrace();
 		}
 		robot.keyPress(KeyEvent.VK_WINDOWS);
-    	robot.keyPress(KeyEvent.VK_S);  // earlier key still pressed
-    	robot.keyRelease(KeyEvent.VK_S);
+    	robot.keyPress(KeyEvent.VK_R);  // earlier key still pressed
+    	
+    	robot.keyRelease(KeyEvent.VK_R);
     	robot.keyRelease(KeyEvent.VK_WINDOWS);
     	
     }
+
 }
