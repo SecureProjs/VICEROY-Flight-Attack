@@ -58,6 +58,7 @@ public class Main extends Application {
         Stage IndiyasStage = new Stage();
         IndiyasStage.setTitle("Indiya");
 
+        
         NewText = new Label("Hello");
         NewText2 = new Label("");
         NewText3 = new Label("");
@@ -98,6 +99,27 @@ public class Main extends Application {
         EternetisStage.show();
         IndiyasStage.show();
         return EmorysStage;
+    }
+//Emory Wilkinson Window
+    private Stage CreateControllerWindow1()
+    {
+	Stage controllerStage1 = new Stage();
+        controllerStage1.setTitle("New Stage");
+        Label EW = new Label("");
+        //Scene can take in a "pane" which is basically any node type
+        Scene debugWindow = new Scene(EW, 600, 500);
+        controllerStage1.setScene(debugWindow);
+	 //Changes the coordinates of the scene
+        controllerStage1.setX(60);
+        controllerStage1.setY(100);
+        //Takes away the title bar of the scene
+        controllerStage1.initStyle(StageStyle.UNDECORATED);
+        //Creates a new scene
+        Scene ColoredWindow2 = new Scene(EW, 600, 500);
+        EW.setStyle("-fx-background-color: black;");
+        controllerStage1.setScene(ColoredWindow2);
+        controllerStage1.show();
+        return controllerStage1;
     }
 
     //Simulate keypress (I hope)
