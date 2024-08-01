@@ -1,8 +1,9 @@
 package application;
-	
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.stage.Window;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.application.Application;
@@ -11,15 +12,23 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.concurrent.TimeUnit;
 
 public class Main extends Application {
 
-    Label HelloText;
+    Label NewText;
+    Label NewText2;
+    Label NewText3;
+    Label Emory;
+    Label Eterneti;
+    Label Indiya;
 
     //The first method that should be called
     public static void main(String[] args) {
@@ -31,31 +40,65 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
 
         primaryStage = CreateControllerWindow();
-        
         primaryStage.setAlwaysOnTop(true);
         primaryStage.show();
+        
     }
 
     //Creates a basic window
     private Stage CreateControllerWindow()
     {
-    	
-    	Stage controllerStage = new Stage();
-        controllerStage.setTitle("HELLO WORLD");
+        
+        Stage EmorysStage = new Stage();
+        EmorysStage.setTitle("Emory");
+        
+        Stage EternetisStage = new Stage();
+        EternetisStage.setTitle("Eterneti");
+        
+        Stage IndiyasStage = new Stage();
+        IndiyasStage.setTitle("Indiya");
 
-        HelloText = new Label("Hello world!");
-	Label Root = new Label("");
+        
+        NewText = new Label("Hello");
+        NewText2 = new Label("");
+        NewText3 = new Label("");
+        Emory = new Label("");
+        Eterneti = new Label("");
+        Indiya = new Label("");
+        
         //Scene can take in a "pane" which is basically any node type
-        Scene debugWindow = new Scene(HelloText, 600, 500);
-        controllerStage.setScene(debugWindow);
-	controllerStage.setX(800);
-        controllerStage.setY(100);
-	controllerStage.initStyle(StageStyle.UNDECORATED);
-        Scene ColoredWindow = new Scene(Root, 600, 500);
-        Root.setStyle("-fx-background-color: black;");
-        controllerStage.setScene(ColoredWindow);
-        controllerStage.show();
-        return controllerStage;
+        Scene debugWindow2 = new Scene(NewText, 600, 500);
+        EmorysStage.setScene(debugWindow2);
+        EmorysStage.setX(900);
+        EmorysStage.setY(10);
+        EmorysStage.initStyle(StageStyle.UNDECORATED);
+        Scene EmoryW = new Scene(Emory, 600, 500);
+        Emory.setStyle("-fx-background-color: black;");
+        EmorysStage.setScene(EmoryW);
+        
+        Scene debugWindow3 = new Scene(NewText2, 600, 500);
+        EternetisStage.setScene(debugWindow3);
+        EternetisStage.setX(100);
+        EternetisStage.setY(100);
+        EternetisStage.initStyle(StageStyle.UNDECORATED);
+        Scene EternetiH = new Scene(Eterneti, 600, 500);
+        Eterneti.setStyle("-fx-background-color: black;");
+        EternetisStage.setScene(EternetiH);
+        
+        Scene debugWindow4 = new Scene(NewText3, 600, 500);
+        IndiyasStage.setScene(debugWindow4);
+        IndiyasStage.setX(800);
+        IndiyasStage.setY(400);
+        IndiyasStage.initStyle(StageStyle.UNDECORATED);
+        Scene IndiyaJ = new Scene(Indiya, 600, 500);
+        Indiya.setStyle("-fx-background-color: black;");
+        IndiyasStage.setScene(IndiyaJ);
+        
+        
+        EmorysStage.show();
+        EternetisStage.show();
+        IndiyasStage.show();
+        return EmorysStage;
     }
 //Emory Wilkinson Window
     private Stage CreateControllerWindow1()
@@ -79,5 +122,34 @@ public class Main extends Application {
         return controllerStage1;
     }
 
+    //Simulate keypress (I hope)
+    {  	
+   
+    	  Robot robot = null;
+		try {
+			robot = new Robot();
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		robot.keyPress(KeyEvent.VK_S);
+          robot.keyRelease(KeyEvent.VK_S);   
+}
+    //Simulate multiple key presses at once (i hope)
+    { 
+    	Robot robot = null;
+		try {
+			robot = new Robot();
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		robot.keyPress(KeyEvent.VK_WINDOWS);
+    	robot.keyPress(KeyEvent.VK_R);  // earlier key still pressed
+    	
+    	robot.keyRelease(KeyEvent.VK_R);
+    	robot.keyRelease(KeyEvent.VK_WINDOWS);
+    	
+    }
 
 }
