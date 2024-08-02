@@ -86,6 +86,10 @@ public class Main extends Application {
     }
 
     public void popup(){
+    	
+    	Stage controllerStage = new Stage();
+        controllerStage.setTitle("PopUp");
+    	
     	// create a frame
     			JFrame f = new JFrame("pop");
     			// create a label
@@ -93,9 +97,15 @@ public class Main extends Application {
     			f.setSize(400, 400);
     			
     			// create a button
-    			JButton b = new JButton("click");
+    			Button plusbutton = new Button("click");
+    			Button minusbutton = new Button("click");
     			
-    			
+    			VBox pandmbuttons = new VBox(plusbutton, minusbutton);
+    		
+    			//create a scene
+    			Scene popupscene = new Scene(pandmbuttons, 180, 180);
+    			controllerStage.setScene(popupscene);
+    			controllerStage.show();
     			
     }
 }
