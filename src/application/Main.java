@@ -17,6 +17,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.util.concurrent.TimeUnit;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.PopupFactory;
+
 public class Main extends Application {
 
     Label HelloText;
@@ -31,7 +37,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
 
         primaryStage = CreateControllerWindow();
-        
+        popup();
         primaryStage.setAlwaysOnTop(true);
         primaryStage.show();
     }
@@ -70,7 +76,7 @@ public class Main extends Application {
         controllerStage1.setX(60);
         controllerStage1.setY(100);
         //Takes away the title bar of the scene
-        controllerStage1.initStyle(StageStyle.UNDECORATED);
+        //controllerStage1.initStyle(StageStyle.UNDECORATED);
         //Creates a new scene
         Scene ColoredWindow2 = new Scene(EW, 600, 500);
         EW.setStyle("-fx-background-color: black;");
@@ -79,5 +85,19 @@ public class Main extends Application {
         return controllerStage1;
     }
 
-
+    public void popup(){
+    	// create a frame
+    			JFrame f = new JFrame("pop");
+    			// create a label
+    			JLabel l = new JLabel("This is a popup");
+    			f.setSize(400, 400);
+    			
+    			// create a button
+    			JButton b = new JButton("click");
+    			
+    			
+    			
+    }
 }
+	
+	
