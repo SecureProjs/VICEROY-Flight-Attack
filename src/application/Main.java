@@ -26,7 +26,8 @@ import javax.swing.PopupFactory;
 public class Main extends Application {
 
     Label HelloText;
-
+    int ntoincrease = 1;
+    Label num = new Label("");
     //The first method that should be called
     public static void main(String[] args) {
         launch(args);
@@ -36,10 +37,11 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
 
-        primaryStage = CreateControllerWindow();
+       // primaryStage = CreateControllerWindow();
         popup();
-        primaryStage.setAlwaysOnTop(true);
-        primaryStage.show();
+     
+       // primaryStage.setAlwaysOnTop(true);
+       // primaryStage.show();
     }
 
     //Creates a basic window
@@ -99,14 +101,23 @@ public class Main extends Application {
     			// create a button
     			Button plusbutton = new Button("click");
     			Button minusbutton = new Button("click");
+ 
+    			VBox pandmbuttons = new VBox(plusbutton, minusbutton, num);
     			
-    			VBox pandmbuttons = new VBox(plusbutton, minusbutton);
-    		
+    			
+    			//Listening function for button  triggered when clicked 
+    			plusbutton.setOnAction(e -> add() ); 
+    			
     			//create a scene
     			Scene popupscene = new Scene(pandmbuttons, 180, 180);
     			controllerStage.setScene(popupscene);
     			controllerStage.show();
     			
+    }
+    
+    public void add(){
+    	ntoincrease = ntoincrease +1;
+    	num.setText(Integer.toString(ntoincrease));
     }
 }
 	
